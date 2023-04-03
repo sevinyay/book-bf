@@ -7,6 +7,10 @@ const app = express();
 // middlewares
 app.use(express.json());
 app.use(cors());
+app.get("/",(req,res)=>{
+res.setHeader("Access-Control-Allow-Credentials", true);
+    res.send("API is running..");
+});
 app.use("/books", router); // localhost:5000
 
 
